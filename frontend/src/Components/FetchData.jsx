@@ -100,7 +100,7 @@ const FetchData = () => {
                                     </tr>
                                     <tr className='product btns'>
                                         <td className='edit'>
-                                            <Link to={`/edit/${res._id}`}><button>Edit</button></Link>
+                                            <Link to={`/merchant/edit/${res._id}`}><button>Edit</button></Link>
                                         </td>
                                         <td className='delete'>
                                             <button onClick={() => { handleDelete(res._id) }}>Delete</button>

@@ -7,7 +7,9 @@ mongoose.connect('mongodb://0.0.0.0:27017/e-comm')
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: true
+        required: true,
+        minlength: 5,
+        maxlength: 200
     },
     email: {
         type: String,
@@ -16,7 +18,8 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    profile: { type: String }
 });
 
 const userLoginDataModel = mongoose.model('logindata', userSchema);

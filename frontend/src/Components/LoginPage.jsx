@@ -1,7 +1,7 @@
+import '../CssFiles/LoginPage.css'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import '../Components/LoginPage.css'
 
 const LoginPage = () => {
     let navigate = useNavigate();
@@ -16,7 +16,7 @@ const LoginPage = () => {
                     console.log(res);
                     if (res.data.message === 'Login Successfully') {
                         localStorage.setItem('token', res.data.token)
-                        navigate('/merchant/create')
+                        navigate('/merchant/fetch')
                     } else {
                         console.log("Invalid Credentials");
                     }

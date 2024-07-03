@@ -8,24 +8,37 @@
 
 /* ========= NavBar CSS =========== */
 .navbar {
-    padding: 20px;
+    /* border: 1px solid white; */
+    padding: 15px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) auto;
     background-color: #000000;
 }
 
 .products {
     /* border: 2px solid whitesmoke; */
-    padding: 0px 5rem;
+    padding: 5px 5rem;
 }
 
 .searchbar {
+    border: 2px solid white;
+    height: 80%;
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid whitesmoke;
     border-radius: 5px;
+    margin-top: 5px;
+
+}
+
+.searchbtn {
+    height: 100%;
+    width: 15%;
+    border: none;
+    background: wheat;
+    color: #0056b3;
+    font-weight: 600;
 }
 
 .textfield {
@@ -45,15 +58,6 @@
     letter-spacing: 2px;
 }
 
-.searchbtn {
-    height: 100%;
-    width: 15%;
-    border: none;
-    background: wheat;
-    color: #0056b3;
-    font-weight: 600;
-}
-
 .producttext {
     color: white;
     font-size: 2rem;
@@ -65,7 +69,6 @@
     /* border: 2px solid whitesmoke; */
     display: grid;
     grid-template-columns: 1fr 1fr;
-
 }
 
 .navlink {
@@ -75,6 +78,25 @@
     font-size: 20px;
     text-align: center;
     padding-top: 10px;
+}
+
+.profile {
+    width: 5rem;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile>a>.profileimage {
+    height: 50px;
+    width: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
 }
 
 /* =========== Create PRoduct Css  ======== */
@@ -225,24 +247,6 @@ h2 {
     padding: 1rem;
 }
 
-/*  ====== edit =========== */
-
-.editproduct {
-    height: 90vh;
-    border: 2px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid green;
-}
-
-.editformdata {
-    border: 2px solid rebeccapurple;
-    padding: 2rem;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-}
 
 /*  /// ============ Pagination ======== */
 

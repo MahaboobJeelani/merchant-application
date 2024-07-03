@@ -4,31 +4,35 @@ import axios from 'axios';
 import '../CssFiles/MerchantRegister.css'
 
 const MerchantRegister = () => {
+  let [profile, setProfile] = useState(null)
   let [username, setUsername] = useState('')
   let [email, setEmail] = useState('')
   let [password, setPassword] = useState('')
+
 
   let navigate = useNavigate()
 
   let handleRegister = (e) => {
     e.preventDefault()
-    let payload = {
-      username: username,
-      email: email,
-      password: password
-    }
-    axios.post('http://localhost:8081/register', payload)
-      .then(() => {
+
+    const formData = new FormData()
+    formData.append('profile', profile)
+    formData.append('username', username)
+    formData.append('email', email)
+    formData.append('password', password)
+
+    axios.post('http://localhost:8081/register', formData, { headers: { "Content-Type": "multipart/formData" } })
+      .then((res) => {
         navigate('/')
-        console.log("Merchant succesfully Register")
       })
       .catch((err) => console.error(err))
   }
 
   return (
     <div className="register-container">
-      <form className="register-form" onSubmit={handleRegister}>
+      <form className="register-form" onSubmit={handleRegister} enctype="multipart/form-data">
         <h2>Register</h2>
+        <input type="file" name='profile' onChange={(e) => setProfile(e.target.files[0])} />
         <label htmlFor="username">Username :</label>
         <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
         <label htmlFor="email">Email :</label>

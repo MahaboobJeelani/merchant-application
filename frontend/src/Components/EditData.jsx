@@ -1,4 +1,4 @@
- 
+import '../CssFiles/EditData.css'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -36,21 +36,24 @@ const EditData = () => {
     }
 
     return (
-        <>
-            <div className='editproduct'>
-                <form action="" className='editformdata'>
-                    <label clas htmlFor="name">Name</label>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} /> <br />
-                    <label clas htmlFor="price">Price</label>
-                    <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} /> <br />
-                    <label clas htmlFor="brand">Brand</label>
-                    <input type="text" value={brand} onChange={(e) => setBrand(e.target.value)} /> <br />
-                    <label clas htmlFor="category">Category</label>
-                    <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} /> <br />
-                    <button onClick={handleEdit}>Submit</button>
-                </form>
-            </div>
-        </>
+        <div className='editproduct'>
+            <form className='editformdata' onSubmit={handleEdit}>
+                <h2>Edit Product</h2>
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+
+                <label htmlFor="price">Price</label>
+                <input type="text" id="price" value={price} onChange={(e) => setPrice(e.target.value)} required />
+
+                <label htmlFor="brand">Brand</label>
+                <input type="text" id="brand" value={brand} onChange={(e) => setBrand(e.target.value)} required />
+
+                <label htmlFor="category">Category</label>
+                <input type="text" id="category" value={category} onChange={(e) => setCategory(e.target.value)} required />
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     );
 };
 

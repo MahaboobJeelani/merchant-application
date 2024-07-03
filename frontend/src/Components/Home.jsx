@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
 import './Application.css'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import NavProfile from './NavProfile';
+
 
 const Home = () => {
     let [searchQuery, setSearchquery] = useState('')
@@ -9,10 +11,13 @@ const Home = () => {
     let handleSearch = () => {
         navigation(`/merchant/fetch?search=${searchQuery}`)
     };
+
+
     return (
         <div className='navbar'>
+
             <div className='products'>
-                <Link className='producttext' to='/merchant/create' >Products</Link>
+                <Link className='producttext' to='/merchant/fetch' >StockHub</Link>
             </div>
 
             <div className='searchbar'>
@@ -26,8 +31,15 @@ const Home = () => {
             </div>
 
             <div className='productslinks'>
+
                 <Link className='navlink' to='/merchant/create'>Create Data</Link>
                 <Link className='navlink' to='/merchant/fetch'>DataBase</Link>
+
+            </div>
+            <div className='profile'>
+
+                <NavProfile />
+
             </div>
         </div>
     )

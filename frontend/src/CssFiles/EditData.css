@@ -1,0 +1,59 @@
+.editproduct {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editformdata {
+    padding: 2rem;
+    width: 40%;
+    border: 2px solid rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+
+}
+
+.editformdata h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.editformdata label {
+    margin: 0.5rem 0 0.25rem 0;
+    font-weight: bold;
+}
+
+.editformdata input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.editformdata input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.editformdata button {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.editformdata button:hover {
+    background-color: #0056b3;
+}
